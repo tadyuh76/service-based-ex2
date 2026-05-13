@@ -1,0 +1,26 @@
+{
+  "name": "digital-library-service-architecture",
+  "version": "1.0.0",
+  "description": "Digital Library System using service-based architecture, SQLite databases, Swagger docs, a gateway, and a lightweight frontend.",
+  "main": "scripts/start-all.js",
+  "private": true,
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "start": "node --no-warnings scripts/start-all.js",
+    "dev": "node --no-warnings scripts/start-all.js",
+    "smoke": "node --no-warnings scripts/smoke-test.js",
+    "start:identity": "node --no-warnings src/identity-service/server.js",
+    "start:book": "node --no-warnings src/book-service/server.js",
+    "start:borrowing": "node --no-warnings src/borrowing-service/server.js",
+    "start:notification": "node --no-warnings src/notification-service/server.js",
+    "start:gateway": "node --no-warnings src/gateway/server.js",
+    "start:frontend": "node --no-warnings src/frontend/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "swagger-ui-express": "^5.0.1"
+  }
+}
