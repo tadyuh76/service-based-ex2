@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Digital Library</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="app-header">
+        <div>
+          <p class="eyebrow">Service-Based Architecture</p>
+          <h1>Digital Library</h1>
+        </div>
+        <div class="status-bar" aria-live="polite">
+          <span class="status-dot" id="status-dot"></span>
+          <span id="status-text">Connecting</span>
+        </div>
+      </header>
+
+      <section class="toolbar" aria-label="Borrow controls">
+        <label for="reader-select">Reader</label>
+        <select id="reader-select"></select>
+        <button id="refresh-button" type="button">Refresh</button>
+      </section>
+
+      <section class="content-grid">
+        <div class="panel library-panel">
+          <div class="section-heading">
+            <h2>Books</h2>
+            <span id="book-count">0 items</span>
+          </div>
+          <div id="books" class="book-grid" aria-live="polite"></div>
+        </div>
+
+        <aside class="panel activity-panel">
+          <div class="section-heading">
+            <h2>Active Borrows</h2>
+            <span id="active-count">0 active</span>
+          </div>
+          <div id="borrows" class="activity-list"></div>
+
+          <div class="section-heading notifications-heading">
+            <h2>Notifications</h2>
+          </div>
+          <div id="notifications" class="activity-list"></div>
+        </aside>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="./app.js"></script>
+  </body>
+</html>
